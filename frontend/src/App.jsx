@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Welcome from "./pages/Welcome";
 import HandleRedirect from "./HandleRedirect";
+import Admin from "./pages/Admin";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -26,6 +27,7 @@ function App() {
           path="/welcome"
           element={<PrivateRoute element={<Welcome />} />}
         />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <ToastContainer />
     </div>

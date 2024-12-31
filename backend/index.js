@@ -5,6 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const router = require("./src/routes/user.routes");
 const productsRouter = require("./src/routes/products.routes");
+const adminRouter = require("./src/routes/admin.routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/v1/auth", router);
 app.use("/api/v1/products", productsRouter);
+app.use("/api/v1/admin", adminRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
